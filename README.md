@@ -20,3 +20,15 @@ Made for the Rapsberry Pi 3B+ which is using a third-party touch screen which
   ```bash
   python paho-mqtt
   ```
+
+## Example use in [Home Assistant](https://www.home-assistant.io)
+
+```yaml
+switch:
+  - platform: mqtt
+    name: "Touch Panel"
+    icon: mdi:tablet
+    command_topic: "screen/rpi"
+    payload_on: 'on'
+    payload_off: 'off'
+```
