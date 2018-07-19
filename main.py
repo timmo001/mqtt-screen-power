@@ -16,9 +16,9 @@ def on_message(client, userdata, msg):
     # The callback for when a PUBLISH message is received from the server.
     print(msg.topic+" "+str(msg.payload))
     if str(msg.payload) == "on":
-        subprocess.Popen("vbetool dpms off")
+        subprocess.Popen("vcgencmd display_power 1")
     else:
-        subprocess.Popen("vbetool dpms on")
+        subprocess.Popen("vcgencmd display_power 0")
 
 
 client = mqtt.Client()
