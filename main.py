@@ -16,10 +16,10 @@ def on_message(client, userdata, msg):
     # The callback for when a PUBLISH message is received from the server.
     print(msg.topic+" "+str(msg.payload))
     if str(msg.payload) == "on":
-        subprocess.Popen(config.power_on_command.split(),
+        subprocess.Popen(config.power_on_command,
                          shell=True, stdout=subprocess.PIPE)
     else:
-        subprocess.Popen(config.power_off_command.split(),
+        subprocess.Popen(config.power_off_command,
                          shell=True, stdout=subprocess.PIPE)
 
 
