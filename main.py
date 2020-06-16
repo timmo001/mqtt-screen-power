@@ -14,8 +14,8 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
     # The callback for when a PUBLISH message is received from the server.
-    print(msg.topic+" "+str(msg.payload))
-    if str(msg.payload) == "on":
+    print(msg.topic+" "+str(msg.payload, 'utf-8'))
+    if str(msg.payload, 'utf-8') == "on":
         subprocess.Popen(config.power_on_command,
                          shell=True, stdout=subprocess.PIPE)
     else:
